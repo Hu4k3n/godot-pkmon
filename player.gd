@@ -6,11 +6,14 @@ const TILE_SIZE = 16
 @onready var anim_tree = $AnimationTree
 @onready var anim_state = anim_tree.get("parameters/playback")
 @onready var ray = $RayCast2D
-
+@onready var all_interactions = []
+@onready var interactLabel = $InteractionComponents/InteractLabel
 enum PlayerState {
 	IDLE,
 	TURNING,
-	WALKING
+	WALKING,
+	INTERACTABLE,
+	INTERACTING
 }
 
 enum FacingDirection {
@@ -31,8 +34,11 @@ var percent_moved_to_next_tile = 0.0
 func _ready() :
 	anim_tree.active = true
 	initial_position = position
+	update_interactions()
 	
 func _physics_process(delta: float) -> void:
+		if Input.is_action_just_pressed("ui_accept"):
+			execute_interaction()
 		if player_state == PlayerState.TURNING:
 			return
 		elif is_moving == false:
@@ -101,3 +107,27 @@ func move(delta):
 	else:
 		is_moving = false
 		
+
+# Interactions
+
+func _on_interaction_area_area_entered(area: Area2D) -> void:
+	all_interactions.insert(0,area)
+	update_interactions()
+	
+
+
+func _on_interaction_area_area_exited(area: Area2D) -> void:
+	all_interactions.erase(area)
+	update_interactions()
+	
+func update_interactions():
+	if all_interactions:
+		interactLabel.text = all_interactions[0].interact_label
+	else:
+		interactLabel.text = ""
+
+func execute_interaction():
+	if all_interactions:
+		var cur_interaction = all_interactions[0]
+		match cur_interaction.interact_type:
+			"print_text" : print(cur_interaction.interact_value)

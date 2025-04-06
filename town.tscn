@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bpw1efh4520xa"]
+[gd_scene load_steps=22 format=4 uid="uid://bpw1efh4520xa"]
 
 [ext_resource type="PackedScene" uid="uid://cw1v4hsix66el" path="res://player.tscn" id="1_x5mr4"]
 [ext_resource type="Texture2D" uid="uid://biffeuvb0mn7p" path="res://assets/bg/grass1_tileset.png" id="2_dwdjc"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djo2uqt55dd8u" path="res://assets/people/Untitled-1.png" id="4_xtgmq"]
 [ext_resource type="Texture2D" uid="uid://sikoqe6albug" path="res://assets/people/people1.png" id="6_fi1dd"]
 [ext_resource type="Texture2D" uid="uid://bep0au714vf57" path="res://assets/player/8345.png" id="6_tkreh"]
+[ext_resource type="PackedScene" uid="uid://behwpv7y1cg7b" path="res://interact_area.tscn" id="7_fi1dd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwdjc"]
 texture = ExtResource("2_dwdjc")
@@ -9501,6 +9502,12 @@ tile_set = SubResource("TileSet_525j1")
 [node name="dialogue" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAPz/CgAAAAAAAAA=")
 tile_set = SubResource("TileSet_tkreh")
+
+[node name="interactArea" parent="dialogue" instance=ExtResource("7_fi1dd")]
+position = Vector2(0, -64)
+interact_label = "E to interact"
+interact_type = "print_text"
+interact_value = "SendIt"
 
 [node name="Player" parent="." instance=ExtResource("1_x5mr4")]
 collision_layer = 2

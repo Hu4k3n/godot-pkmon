@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cw1v4hsix66el"]
+[gd_scene load_steps=37 format=3 uid="uid://cw1v4hsix66el"]
 
 [ext_resource type="Texture2D" uid="uid://dxm8qhjo8cwvx" path="res://assets/player/playerSpriteSheet-walk-filtered.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cqskqpc0ogc3g" path="res://player.gd" id="1_onrkg"]
@@ -456,6 +456,18 @@ states/Turn/position = Vector2(322.222, 304)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_pbfsw")
 states/Walk/position = Vector2(441.333, 195.835)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
+size = Vector2(16, 16)
+
+[sub_resource type="SystemFont" id="SystemFont_2l17n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_onrkg"]
+line_spacing = 0.0
+font = SubResource("SystemFont_2l17n")
+font_size = 8
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
 
@@ -485,9 +497,35 @@ parameters/Turn/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
+zoom = Vector2(3, 3)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 8)
 enabled = false
 target_position = Vector2(0, 16)
+
+[node name="InteractionComponents" type="Node2D" parent="."]
+z_index = 5
+
+[node name="InteractionArea" type="Area2D" parent="InteractionComponents"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponents/InteractionArea"]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_i3pqv")
+
+[node name="InteractLabel" type="Label" parent="InteractionComponents"]
+offset_left = -32.0
+offset_top = 32.0
+offset_right = 48.0
+offset_bottom = 48.0
+text = "Press E to Interact"
+label_settings = SubResource("LabelSettings_onrkg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_exited"]
