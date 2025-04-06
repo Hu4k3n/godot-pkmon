@@ -9505,7 +9505,7 @@ tile_set = SubResource("TileSet_tkreh")
 
 [node name="interactArea" parent="dialogue" instance=ExtResource("7_fi1dd")]
 position = Vector2(0, -64)
-interact_label = "E to interact"
+interact_label = "Press E to Interact"
 interact_type = "print_text"
 interact_value = "SendIt"
 
