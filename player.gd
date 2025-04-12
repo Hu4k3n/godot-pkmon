@@ -38,7 +38,7 @@ func _ready() :
 	initial_position = position
 	update_interactions()
 	
-func _physics_process(delta: float) -> void:`
+func _physics_process(delta: float) -> void:
 		print("is_interacting:", is_interacting)
 		if Input.is_action_just_pressed("ui_interact") and not is_interacting and not wait_for_release:
 			execute_interaction()
@@ -134,18 +134,11 @@ func execute_interaction():
 	if all_interactions:
 		var cur_interaction = all_interactions[0]
 		match cur_interaction.interact_type:
-			"welcome" : callWelcomeDialogue()
-			"hello" : callHelloDialogue()
+			"welcome" : callDialogue("res://dialogueManager/Welcome.dialogue")
+			"hello" : callDialogue("res://dialogueManager/Hello.dialogue")
 
-func callHelloDialogue():
-	print("called welcome")
-	var balloon = DialogueManager.show_dialogue_balloon(load("res://dialogueManager/Hello.dialogue"),"start")
-	balloon.dialogue_finished.connect(_on_dialogue_finished)
-	is_interacting = true
-	
-func callWelcomeDialogue():
-	print("called welcome")
-	var balloon = DialogueManager.show_dialogue_balloon(load("res://dialogueManager/Welcome.dialogue"),"start")
+func callDialogue(resource):
+	var balloon = DialogueManager.show_dialogue_balloon(load(resource),"start")
 	balloon.dialogue_finished.connect(_on_dialogue_finished)
 	is_interacting = true
 
