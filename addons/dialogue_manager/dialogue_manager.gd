@@ -37,6 +37,8 @@ signal bridge_dialogue_started(resource: DialogueResource)
 ## Used inernally
 signal bridge_mutated()
 
+signal dialogue_finished
+
 
 ## The list of globals that dialogue can query
 var game_states: Array = []
@@ -100,6 +102,7 @@ func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_
 
 	# Get the line data
 	var dialogue: DialogueLine = await get_line(resource, key, extra_game_states)
+		
 
 	# If our dialogue is nothing then we hit the end
 	if not _is_valid(dialogue):

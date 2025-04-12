@@ -1,11 +1,15 @@
 class_name DialogueManagerExampleBalloon extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
+signal dialogue_finished()
+
 ## The action to use for advancing the dialogue
 @export var next_action: StringName = &"ui_accept"
 
 ## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"ui_cancel"
+
+@onready var Dialogue = $dialogue/Dialogue
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -32,6 +36,9 @@ var dialogue_line: DialogueLine:
 			apply_dialogue_line()
 		else:
 			# The dialogue has finished so close the balloon
+			print("dialogue finsihed")
+			# send a signal to the dialogue manager
+			dialogue_finished.emit()
 			queue_free()
 	get:
 		return dialogue_line

@@ -460,6 +460,7 @@ states/Walk/position = Vector2(441.333, 195.835)
 size = Vector2(16, 16)
 
 [sub_resource type="SystemFont" id="SystemFont_2l17n"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_onrkg"]
 line_spacing = 0.0

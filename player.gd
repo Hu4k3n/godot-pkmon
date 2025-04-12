@@ -8,12 +8,11 @@ const TILE_SIZE = 16
 @onready var ray = $RayCast2D
 @onready var all_interactions = []
 @onready var interactLabel = $InteractionComponents/InteractLabel
+@onready var dialogue = $"../dialogue/Dialogue"
 enum PlayerState {
 	IDLE,
 	TURNING,
 	WALKING,
-	INTERACTABLE,
-	INTERACTING
 }
 
 enum FacingDirection {
@@ -25,25 +24,31 @@ enum FacingDirection {
 
 var player_state = PlayerState.IDLE
 var facing_direction = FacingDirection.DOWN
+var wait_for_release = false
 
 var initial_position = Vector2(0,0)
 var input_direction = Vector2(0,0)
 var is_moving = false
+var is_interacting = false
 var percent_moved_to_next_tile = 0.0
+
 
 func _ready() :
 	anim_tree.active = true
 	initial_position = position
 	update_interactions()
 	
-func _physics_process(delta: float) -> void:
-		if Input.is_action_just_pressed("ui_accept"):
+func _physics_process(delta: float) -> void:`
+		print("is_interacting:", is_interacting)
+		if Input.is_action_just_pressed("ui_interact") and not is_interacting and not wait_for_release:
 			execute_interaction()
-		if player_state == PlayerState.TURNING:
+		if Input.is_action_just_released("ui_interact"):
+			wait_for_release = false
+		if player_state == PlayerState.TURNING and not is_interacting:
 			return
-		elif is_moving == false:
+		elif is_moving == false and not is_interacting:
 			process_player_input()
-		elif input_direction != Vector2.ZERO:
+		elif input_direction != Vector2.ZERO and not is_interacting:
 			anim_state.travel("Walk")
 			move(delta)
 		else:
@@ -113,13 +118,11 @@ func move(delta):
 func _on_interaction_area_area_entered(area: Area2D) -> void:
 	all_interactions.insert(0,area)
 	update_interactions()
-	
-
 
 func _on_interaction_area_area_exited(area: Area2D) -> void:
 	all_interactions.erase(area)
 	update_interactions()
-	
+
 func update_interactions():
 	if all_interactions:
 		interactLabel.text = all_interactions[0].interact_label
@@ -127,7 +130,26 @@ func update_interactions():
 		interactLabel.text = ""
 
 func execute_interaction():
+	print("executingInteraction")
 	if all_interactions:
 		var cur_interaction = all_interactions[0]
 		match cur_interaction.interact_type:
-			"print_text" : print(cur_interaction.interact_value)
+			"welcome" : callWelcomeDialogue()
+			"hello" : callHelloDialogue()
+
+func callHelloDialogue():
+	print("called welcome")
+	var balloon = DialogueManager.show_dialogue_balloon(load("res://dialogueManager/Hello.dialogue"),"start")
+	balloon.dialogue_finished.connect(_on_dialogue_finished)
+	is_interacting = true
+	
+func callWelcomeDialogue():
+	print("called welcome")
+	var balloon = DialogueManager.show_dialogue_balloon(load("res://dialogueManager/Welcome.dialogue"),"start")
+	balloon.dialogue_finished.connect(_on_dialogue_finished)
+	is_interacting = true
+
+func _on_dialogue_finished():
+	print("dialogue ended")
+	is_interacting = false
+	wait_for_release = true
