@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://byk7q4mnie132"
+path="res://.godot/imported/contractor.dialogue-6be8e17b4c1c47a98ceb67fcea76f4b0.tres"
+
+[deps]
+
+source_file="res://dialogueManager/People/contractor.dialogue"
+dest_files=["res://.godot/imported/contractor.dialogue-6be8e17b4c1c47a98ceb67fcea76f4b0.tres"]
+
+[params]
+
+defaults=true

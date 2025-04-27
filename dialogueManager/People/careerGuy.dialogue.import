@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://ccjnkkwhuh3x2"
+path="res://.godot/imported/careerGuy.dialogue-172feded000713e455cfeec7c5f0e636.tres"
+
+[deps]
+
+source_file="res://dialogueManager/People/careerGuy.dialogue"
+dest_files=["res://.godot/imported/careerGuy.dialogue-172feded000713e455cfeec7c5f0e636.tres"]
+
+[params]
+
+defaults=true

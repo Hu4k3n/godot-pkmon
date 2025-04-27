@@ -1,0 +1,50 @@
+~ start
+Greg : Hey there kiddo. 
+Greg : I just came down after meeting with the creator.
+Greg: FYI if you do not know the creator's name is Arjun Syam. 
+~ Menu
+Greg : You want to any career details regarding the Arjun Syam the creator 
+- No Thanks 
+	Greg : For more details of the works and projects he has done, refer to his linkedIn.
+	Greg : Im pretty sure Mr. Arjun Syam will be happy to connect with you regarding further information.
+	Greg : Feel free to drop a mail at arjun.syam23@gmail.com
+	Greg : Cheers! See ya kiddo
+	=> END
+- What tech stacks did he pick up from his professional career ? 
+	Greg : Sure kid, Arjun has worked in the Front-end development for Cisco Contact Center
+	Greg : He is an expert in handling the UI and the funcitonality in a React project.
+	Greg : Moreover, due to his experiance in handling the grafana dashboards, he has set up the key point mertrics.
+	Greg : So he is experianced in handling Pinot SQL Queries and visualizing dashboards.
+	Greg : Since he has been working on a project that has a rolling release he has experiance in handling Docker and CI/CD pipeline.
+	Greg : For the Webex PLaytime hackathon, he showcased his skill in creating applications that leverage LLMs that in turn awarded him recognition in the hackathon.
+	=> Menu
+- What did Arjun do in SAP ? 
+	Greg : While pursuing his bachelor's in Computer Science in NIT Calicut. Arjun interned at SAP for 2 months. 
+	Greg : From May - July 2021, he worked as an Automation Engineer.
+	Greg : he developed and executed automated test cases using Selenium WebDriver, in Java, Collaborated with cross-functional teams to ensure comprehensive test coverage and highquality deliverables.
+	Greg : He also Served as an Executive Committee (Execom) Member, organizing and conducting events for interns to enhance engagement and learning.
+	=> Menu
+- What did Arjun do in Cisco?
+	Greg : After graduating from NIT Calicut, Arjun joined Cisco in August 2022 as a Software Engineer.
+	Greg : He worked on Cisco Webex Contact Center, which serves over 100,000 daily active users and 3.6 million agents.
+	Greg : He improved the knowledge point interface, using Grafana and Pinot of the Cisco Contact Cemter allowing the monitoring of failure APIs in production environment.
+	Greg : He enhanced Microsoft Teams integration with Webex Contact Center for seamless synchronization between platforms.
+	Greg : He was awarded the MVP Best Innovation Project for creating the Agent Burnout Widget, the first major AI/ML feature for the platform.
+	Greg : You want to hear more ?  
+	- Yes
+		Greg : He added important customer-requested features like Multiparty and Supervisor Agent State and automated test cases for them.
+		Greg : He designed and implemented an optimized search algorithm for paginated lists, reducing API calls and boosting performance.
+		Greg : He spearheaded accessibility improvements, integrating JAWS for Windows and VoiceOver for MacOS into the product.
+		Greg : He played a critical role in updating the NodeJS library across the product.
+		Greg : He also worked as a Support Engineer, handling over 50 PagerDuty incidents and resolving live customer issues and bugs.
+	- No
+		Greg : Wow! I was going in a flow. Sure thing. What do you wanna talk about ?
+	=> Menu
+- What are the accolades Arjun received at Cisco?
+	Greg : Good question kid! Here are the accolades Arjun achieved at Cisco:
+	Greg : MVP Best Innovation Project award for the Agent Burnout Widget. He was awarded the MVP Best Innovation Project for creating the Agent Burnout Widget, the first major AI/ML feature for the platform.
+	Greg : Completion of Cisco Security Space Fleet Training.
+	Greg : Completion of the Cisco Security Green Belt certification.
+	Greg : Won the Cisco Webex Playtime Hackathon 2 times. Winner of the People's Choice Awards
+	=> Menu
+=> END

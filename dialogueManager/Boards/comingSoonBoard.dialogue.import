@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dieppbk4ad4qg"
+path="res://.godot/imported/comingSoonBoard.dialogue-b19b0971a9ba3cbff0a95ec49fbea492.tres"
+
+[deps]
+
+source_file="res://dialogueManager/Boards/comingSoonBoard.dialogue"
+dest_files=["res://.godot/imported/comingSoonBoard.dialogue-b19b0971a9ba3cbff0a95ec49fbea492.tres"]
+
+[params]
+
+defaults=true

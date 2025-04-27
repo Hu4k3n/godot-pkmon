@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://b1wkljpyacv5a"
+path="res://.godot/imported/MarkComingSoon.dialogue-86a6bdebc7e63e3b3f79e961a7eb5390.tres"
+
+[deps]
+
+source_file="res://dialogueManager/People/MarkComingSoon.dialogue"
+dest_files=["res://.godot/imported/MarkComingSoon.dialogue-86a6bdebc7e63e3b3f79e961a7eb5390.tres"]
+
+[params]
+
+defaults=true

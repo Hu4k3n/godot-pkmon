@@ -134,9 +134,20 @@ func execute_interaction():
 	if all_interactions:
 		var cur_interaction = all_interactions[0]
 		match cur_interaction.interact_type:
-			"welcome" : callDialogue("res://dialogueManager/Welcome.dialogue")
-			"hello" : callDialogue("res://dialogueManager/Hello.dialogue")
-
+#			People
+			"welcome" : callDialogue("res://dialogueManager/People/Welcome.dialogue")
+			"contractor" : callDialogue("res://dialogueManager/People/contractor.dialogue")
+			"homePerson" : callDialogue("res://dialogueManager/People/homePerson.dialogue")
+			"MarkComingSoon" : callDialogue("res://dialogueManager/People/MarkComingSoon.dialogue")
+			"careerGuy" : callDialogue("res://dialogueManager/People/careerGuy.dialogue")
+			"contact" : callDialogue("res://dialogueManager/People/contact.dialogue")
+			"skroll" : callDialogue("res://dialogueManager/People/careerGuy.dialogue")
+#			Boards
+			"homeBoard" : callDialogue("res://dialogueManager/Boards/homeBoard.dialogue")
+			"templeBoard" : callDialogue("res://dialogueManager/Boards/templeBoard.dialogue")
+			"officeBoard" : callDialogue("res://dialogueManager/Boards/officeBoard.dialogue")
+			"comingSoonBoard" : callDialogue("res://dialogueManager/Boards/comingSoonBoard.dialogue")
+			"woodBridgeBoard" : callDialogue("res://dialogueManager/Boards/woodBridgeBoard.dialogue")
 func callDialogue(resource):
 	var balloon = DialogueManager.show_dialogue_balloon(load(resource),"start")
 	balloon.dialogue_finished.connect(_on_dialogue_finished)

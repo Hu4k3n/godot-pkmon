@@ -1,0 +1,29 @@
+~ start
+Cheerful townfolk: [[Hi|Hello|Howdy]], Welcome to Huraken's city.
+Cheerful townfolk: Here you can find more information of the creator of this place.
+Cheerful townfolk: What he did in his career, his skills and more.
+Cheerful townfolk : Here in this small town, we have the House, Knowledge Temple, The Office Oval
+~ Menu
+Cheerful townfolk: Would you like to know more about this place ? 
+- No, Thanks
+	Cheerful townfolk: See you around :) 
+- What is the House ? 
+	Cheerful townfolk : The House is a representation of the creator's home.
+	Cheerful townfolk : There you will get more info of the early life of the creator
+	Cheerful townfolk : You can talk to people there to know about his personal life. 
+	Cheerful townfolk : Psst!
+	Cheerful townfolk : Don't tell anyone there is more structures coming to explore the creator's interest.
+	Cheerful townfolk : I have heard of plans.
+	Cheerful townfolk : Dont tell anyone that I said this. 
+	=> Menu
+- What is Knowledge Temple ? 
+	Cheerful townfolk : There is an old man Master Skroll up there. Master Skroll is the guardian of the knowledge of the creator.
+	Cheerful townfolk : You can talk to Master Skroll to know what the creator is upto.
+	Cheerful townfolk : Master Skroll will let you know the skills and great feats of the creator
+	=> Menu
+- What is the Office Oval ? 
+	Cheerful townfolk : The Office Oval is where the creator is in currently working. 
+	Cheerful townfolk : Unfortunately you cannot directly meet him, without an appointment. But feel free to talk to the other employees.
+	Cheerful townfolk : They will happily fill you in to know where all the creator has moved around in his professional career.
+	=> Menu
+=> END

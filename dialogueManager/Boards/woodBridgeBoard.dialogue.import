@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://3k5i5501n2x2"
+path="res://.godot/imported/woodBridgeBoard.dialogue-a7aa6b698729d16eab1fa2721e4c50f4.tres"
+
+[deps]
+
+source_file="res://dialogueManager/Boards/woodBridgeBoard.dialogue"
+dest_files=["res://.godot/imported/woodBridgeBoard.dialogue-a7aa6b698729d16eab1fa2721e4c50f4.tres"]
+
+[params]
+
+defaults=true

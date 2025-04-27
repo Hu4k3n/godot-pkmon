@@ -73,7 +73,7 @@ ui_interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogueManager/Welcome.dialogue", "res://dialogueManager/Hello.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogueManager/Boards/homeBoard.dialogue", "res://dialogueManager/Boards/templeBoard.dialogue", "res://dialogueManager/Boards/officeBoard.dialogue", "res://dialogueManager/Boards/comingSoonBoard.dialogue", "res://dialogueManager/Boards/woodBridgeBoard.dialogue", "res://dialogueManager/People/Welcome.dialogue", "res://dialogueManager/People/MarkComingSoon.dialogue", "res://dialogueManager/People/ComingSoon.dialogue", "res://dialogueManager/People/contractor.dialogue", "res://dialogueManager/People/homePerson.dialogue", "res://dialogueManager/People/contact.dialogue", "res://dialogueManager/People/careerGuy.dialogue")
 
 [layer_names]
 

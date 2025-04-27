@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cg830qkaso0dh"
+path="res://.godot/imported/homePerson.dialogue-a718875f5d53ad6763af8b1de7cf3be5.tres"
+
+[deps]
+
+source_file="res://dialogueManager/People/homePerson.dialogue"
+dest_files=["res://.godot/imported/homePerson.dialogue-a718875f5d53ad6763af8b1de7cf3be5.tres"]
+
+[params]
+
+defaults=true
